@@ -1,3 +1,3 @@
-//Implementation of MIN-HEAP
+//Implementation of MAX-HEAP
 //===========================
 
