@@ -1,7 +1,10 @@
 #include <bits/stdc++.h>
+using namespace std;
 class MaxHeap
 {
 private:
+    vector<int> heap;
+    
     //This will return the parent Index of the node localted at index i in the array.
     int getParentIndex(int i)
     {
@@ -13,7 +16,7 @@ private:
         return 2*i+1;
     }
     //this will return the right child index of the node localted at index i 
-    int getLeftChildIndex(int i)
+    int getRightChildIndex(int i)
     {
         return 2*i+2;
     }
@@ -34,7 +37,26 @@ private:
     //Used when the root of the heap is disturbed. --> Read comment below.
     void heapifyDown(int i)
     {
+        int largest = i;
+        int leftChildIndex = getLeftChildIndex(i);
+        int rightChildIndex = getRightChildIndex(i);
         
+        if(leftChildIndex < heap.size() && heap[leftChildIndex]>heap[largest])
+        {
+            largest = leftChildIndex;
+        }
+        if(rightChildIndex < heap.size() && heap[rightChildIndex]>heap[largest])
+        {
+            largest = rightChildIndex;
+        }
+        //Now larget point to the larget among 3 nodes.
+        // If the largest is not the current node, swap and continue heapifying down
+        if(largest != i)
+        {
+            //Now swap the largest and the root nodes.
+            swap(heap[largest],heap[i]);
+            heapifyDown(largest);
+        }
     }
 };
 
