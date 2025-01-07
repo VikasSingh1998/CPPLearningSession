@@ -6,6 +6,9 @@ bool comp(int a,int b)
 {
     return a>b;// Min-heap: lower values have higher priority
 }
+// General Rule:
+// The root is the element where comp(root, child) is false for all child nodes.
+// The child is any element where comp(root, child) is **true`.
 
 // Function to display the elements of the priority queue
 void display(priority_queue<int,vector<int>,decltype(&comp)> pq)
