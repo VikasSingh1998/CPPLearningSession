@@ -55,24 +55,18 @@ int main()
     return 0;
 }
 // -----------------------------------------------------------------
+🔹 Important Notes
+✔ pipe() is only available on Unix/Linux systems (Not available in Windows natively).
+✔ Works with fork() to communicate between parent and child processes.
+✔ Data flows in one direction (from fd[1] to fd[0]).
+✔ If all write ends (fd[1]) are closed, reading (fd[0]) returns EOF.
+✔ If all read ends (fd[0]) are closed, writing (fd[1]) causes SIGPIPE signal (broken pipe error).
 
+🛠 Windows Alternative
+Windows does not support pipe() directly. Instead, you can use:
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Anonymous Pipes (CreatePipe())
+Named Pipes (CreateNamedPipe())
+------------------------------------------------------------------------
 
 
