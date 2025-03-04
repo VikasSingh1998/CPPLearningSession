@@ -38,3 +38,9 @@ int main()
 Output:
 No user found for the given ID.
 -----------------------------------------------------------------------------------
+✅ Why use std::optional here?
+
+Instead of returning an empty string ("") or nullptr, we explicitly return std::nullopt to indicate the absence of a value.
+This makes the code clearer and type-safe.
+
+====================================================================================
