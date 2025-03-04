@@ -1,7 +1,8 @@
 What is std::optional?
-std::optional<T> is a feature introduced in C++17. It is a wrapper that can either contain a value or be empty. 
+std::optional<T> is a feature introduced in C++17. 
+It is a wrapper that can either contain a value or be empty. 
 This helps avoid returning raw pointers or special values (like -1 or nullptr) to indicate missing data.
-//===================================================================
+//========================================================================================================
 #include <iostream>
 #include <optional>
 #include <string>
@@ -33,3 +34,7 @@ int main()
     
     return 0;
 }
+--------------------------------
+Output:
+No user found for the given ID.
+-----------------------------------------------------------------------------------
