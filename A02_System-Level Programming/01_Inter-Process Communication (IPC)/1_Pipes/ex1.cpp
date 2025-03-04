@@ -1,4 +1,10 @@
 /*
+1. Pipes (FIFO)
+✅ Use Case: Data transfer between related processes (Parent-Child).
+✅ Types:
+Unnamed Pipes: pipe() – works only between related processes.
+Named Pipes (FIFO): mkfifo() – works between any processes.
+==========================================================================
 Introduction to Pipes in C++ (Inter-Process Communication - IPC)
 ----------------------------------------------------------------
 🔹 What are Pipes?
