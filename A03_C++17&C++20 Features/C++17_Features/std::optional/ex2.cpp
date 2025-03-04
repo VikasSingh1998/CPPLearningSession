@@ -36,8 +36,19 @@ int main()
 Output:
 User Name is: defaultName
 -------------------------------------------------------------------------------------
+Summary
+==========
+Feature	                          Explanation
+.has_value()	----------> Checks if a value is present
+*optional_var	-----------> Dereferences the optional to get the actual value
+.value_or(default)	----------> Returns the value if present, otherwise returns a default value
+std::nullopt	----------------> Represents an empty std::optional
 
-
+🚀 Key Takeaways
+std::optional<T> makes function return values more expressive.
+Avoids nullptr, magic values (-1, 0, empty string) for missing data.
+Improves code readability and robustness.
+====================================================================================
 
 
 
