@@ -1,3 +1,5 @@
+// 🔹 Example: Using Unnamed Pipe (pipe())
+// ================================================
 #include <iostream>
 #include <unistd.h>
 #include <cstring>
@@ -44,3 +46,5 @@ Child writes a message into the pipe.
 Parent reads the message from the pipe.
 Both processes close their respective pipe ends.
 ----------------------------------------------------------------------------
+✅ Pros: Simple, Fast.
+❌ Cons: Works only between parent-child; data flows one way (unidirectional).
