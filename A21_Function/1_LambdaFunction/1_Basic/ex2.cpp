@@ -1,3 +1,5 @@
+1. Simplest Lambda Function (No Parameters, No Captures)
+//=========================================================
 #include <iostream>
 #include <bits/stdc++.h>
 
@@ -13,6 +15,10 @@ int main()
 }
 /*
 auto funName = []() -> RT {};
-
 if the RT is not there, no need to  the write ->
+---------------------------------------------------------
+💡 Explanation:
+
+[] → No captures.
+() → No parameters.
 */ 
