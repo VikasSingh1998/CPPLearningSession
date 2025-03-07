@@ -105,7 +105,35 @@ int main()
 --------------------------------------------------------------------------
 🔹 Example 5: Using std::function<> for Callbacks
 std::function<> is useful for event-driven programming and callbacks.
-----------------------------------------------------------------------
+----------------------
+Code:
+
+#include <iostream>
+#include <functional>
+using namespace std;
+
+// Function that accepts a callback
+void executeCallback(function<void(string)> callback) 
+{
+    callback("Hello from Callback!"); 
+}
+
+int main() 
+{
+    // Lambda function as a callback
+    auto myCallback = [](string msg) -> void 
+    {
+        cout << "Callback received: " << msg << endl;
+    };
+
+    // Pass lambda as callback
+    executeCallback(myCallback);
+
+    return 0;
+}
+📌 executeCallback takes a function (std::function<void(string)>) as a parameter and calls it.
+------------------------------------------------------------------------------------------------
+
 
 
 
