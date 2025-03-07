@@ -17,3 +17,14 @@ Without std::function<>, we would be limited to using function pointers or lambd
 ✅ Storing Callables in Containers: Can store multiple function types in STL containers like std::vector.
 ✅ Callbacks: Used in event-driven programming.
 ---------------------------------------------------------------------------
+4️⃣ Summary: When to Use std::function<>?
+------------------------------------------
+Feature	                                       std::function<>
+-----------------------------------------------------------------
+Store function pointers                           ✅ Yes
+Store lambda functions                            ✅ Yes
+Store functors (objects with operator())        	✅ Yes
+Store member functions (std::bind)	              ✅ Yes
+Change function dynamically	                      ✅ Yes
+Useful for callbacks	                            ✅ Yes
+---------------------------------------------------------------------------
