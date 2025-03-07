@@ -9,3 +9,11 @@
 🔹 Basic Syntax:
 std::function<return_type(parameter_types)> func_name;
 ---------------------------------------------------------------------------
+2️⃣ Why Use std::function<>?
+Without std::function<>, we would be limited to using function pointers or lambdas directly. std::function<> allows:
+
+✅ Flexibility: You can change the function dynamically.
+✅ Uniformity: Works with lambdas, function pointers, functors, and member functions.
+✅ Storing Callables in Containers: Can store multiple function types in STL containers like std::vector.
+✅ Callbacks: Used in event-driven programming.
+---------------------------------------------------------------------------
