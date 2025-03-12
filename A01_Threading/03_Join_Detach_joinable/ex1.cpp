@@ -6,8 +6,8 @@ t1.join()
 
 t1.joinable()
 =================
-The t1.joinable() function checks whether a thread object t1 is associated with a
-thread of execution. If the thread is joinable, it returns true, otherwise, it returns false.
+The t1.joinable() function checks whether a thread object t1 is associated with a thread of execution. 
+If the thread is joinable, it returns true, otherwise, it returns false.
 A thread is joinable if it has been started and has not yet been joined or detached.
 */
 
