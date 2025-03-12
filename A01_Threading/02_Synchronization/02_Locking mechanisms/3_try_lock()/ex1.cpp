@@ -1,6 +1,6 @@
 /*
-try_lock()
-------------
+try_lock() ==> attempts to lock but does not get block if already locked.
+--------------------------------------------------------------------------
 => try_lock() try to lock the mutex and return immediately either success or fail.
 => On successful lock acquisition it return true else false.
 => If try_lock() is not able to lock the mutex, then it does not get blocked, that's why it is called non-blocking.
