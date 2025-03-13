@@ -42,4 +42,13 @@ Use Case
 ✅ Best suited when multiple mutexes are used to protect shared resources.
 ✅ Ideal for multi-mutex deadlock prevention.
 ===================================================================================================================
-  
+4. Comparison Table
+======================
+Feature	                 std::lock_guard	  std::unique_lock	        std::scoped_lock (C++17)
+Automatic Locking	        ✅ Yes	             ✅ Yes (optional)	           ✅ Yes
+Manual Unlocking	        ❌ No	             ✅ Yes	                   ❌ No
+Deferred Locking	        ❌ No	             ✅ Yes	                       ❌ No
+Move Semantics	            ❌ No	             ✅ Yes	                   ❌ No
+Locks Multiple Mutexes	    ❌ No	             ❌ No	                       ✅ Yes
+Prevents Deadlocks	        ❌ No	             ❌ No	                       ✅ Yes
+=====================================================================================================================
