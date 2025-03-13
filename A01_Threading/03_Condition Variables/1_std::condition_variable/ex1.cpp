@@ -1,13 +1,17 @@
 Understanding wait()
 =====================
-
+The wait() function is used to put a thread to sleep until another thread notifies it using notify_one() or notify_all().
 ------------------------------------------------------------
 There are two ways to call wait() in C++:
 
 Way 1: wait() with only a std::unique_lock<std::mutex>
 -------------------------------------------------------
-cv.wait(lock);
----------------
+Syntax:
+void wait(std::unique_lock<std::mutex>& lock);
+
+Example:
+cv.wait(lock); //cv is the condition variable object.
+-----------------------------------------------------
 When a thread calls cv.wait(lock); it pauses execution indefinitely until 
 another thread calls notify_one() or notify_all() on the same std::condition_variable.
 
@@ -69,5 +73,25 @@ output:
 Main: Sending signal to worker...
 Worker: Received signal! Processing...
 ===========================================================================================
+Way 2: wait() with a Predicate (cv.wait(lock, predicate))
+-------------------------------------------------------------
+Syntax:
+template <class Predicate>
+void wait(std::unique_lock<std::mutex>& lock, Predicate pred);
 
+Note: predicate is a callable (such as a lambda function or a function object) that returns a bool.
+
+Example:
+// Wait until 'ready' becomes true
+cv.wait(lock, [] { return ready; });  // Lambda predicate
+------------------------------------------------------
+How cv.wait(lock, predicate) Works
+-----------------------------------
+The thread will release the lock and wait until notified.
+When notified, it will reacquire the lock and check the predicate.
+If the predicate evaluates to false, it will go back to waiting.
+If the predicate evaluates to true, it will proceed.
+-----------------------------------------------------------------------------------------------
+Example: Example Using Predicate
+---------------------------------
 
