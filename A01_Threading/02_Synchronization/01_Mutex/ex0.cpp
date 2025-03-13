@@ -76,7 +76,13 @@ Thread 2 releasing lock
 Thread 1 got the lock
 Thread 1 releasing lock
 */
+=========================================================
+A semaphore is a non-negative integer that represents the number of available units of a resource. 
+A thread or process can acquire a unit of the resource by decrementing the semaphore, 
+and release it by incrementing the semaphore. 
+A mutex is a binary variable that can have only two values: locked or unlocked.
 
+========================================================
 
 
   
