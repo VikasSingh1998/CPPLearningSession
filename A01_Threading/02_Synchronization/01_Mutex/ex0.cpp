@@ -1,3 +1,8 @@
+Mutex:
+--------
+Mutex ek synchronization mechanism hai jo ek time par sirf ek thread ko 
+shared resource access karne deta hai, taaki race condition avoid ho.
+---------------------------------------------------------------------------------------------------------------------------------------    
 How mutux is internally implemented in cpp
 ============================================
 std::mutex is internally a class in C++ that provides mutual exclusion for synchronizing threads. 
