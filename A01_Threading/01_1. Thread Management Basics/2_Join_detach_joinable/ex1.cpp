@@ -11,6 +11,11 @@ t1.joinable()
 The t1.joinable() function checks whether a thread object t1 is associated with a thread of execution. 
 If the thread is joinable, it returns true, otherwise, it returns false.
 A thread is joinable if it has been started and has not yet been joined or detached.
+
+joinable() check karta hai ki thread ko join kiya ja sakta hai ya nahi.
+Matlab: Agar thread abhi bhi running hai ya kabhi join ya detach nahi hua, tab joinable() true return karta hai.
+Agar thread already join ho chuka hai ya detach ho chuka hai, tab joinable() false return karega.
+
 */
 
 #include <iostream>
