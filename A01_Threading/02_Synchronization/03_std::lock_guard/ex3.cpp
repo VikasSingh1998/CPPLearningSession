@@ -23,15 +23,15 @@ void increment()
     ..
     
     {   // Critical Section: Only Line `k` is protected by the mutex
-        std::lock_guard<std::mutex> lock(mtx);
+        std::lock_guard<std::mutex> lg(mtx);
         counter++;  // Line k (Only this operation is locked)
-    } // Mutex automatically unlocks here
+    }   // Mutex automatically unlocks here
 
     ..
     ..
     linen;
 
-} // Lock automatically released at the end of the scope
+} 
 
 int main() 
 {
