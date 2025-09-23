@@ -1,6 +1,6 @@
 /*what is the mutex?
 ----------------------
-==> Mutex is used to avoid the race conditions by ensuring that only one thread can access a shared resource at a time.
+==> A mutex is a synchronization mechanism used to avoid race conditions by ensuring that only one thread accesses a shared resource at a time.
 ==> we use the lock() and unlock() function on mutex to avoid the reace condition.
 =============================================================================================================================
 What is a race condition?
