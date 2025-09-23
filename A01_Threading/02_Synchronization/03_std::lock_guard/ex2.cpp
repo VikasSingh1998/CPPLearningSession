@@ -10,7 +10,7 @@ int counter = 0; // Shared resource
 
 void increment() 
 {
-    std::lock_guard<std::mutex> lock(mtx); // Lock mutex automatically (RAII)
+    lock_guard<mutex> lg(mtx); // Lock mutex automatically(RAII), scope based lock.
     
     // Critical Section (Only one thread can execute this at a time)
     for(int i=0;i<100;i++)
@@ -40,7 +40,7 @@ Final value of the counter is: 200
 */
 ------------------------------------------------------------
 How It Works?
-When std::lock_guard<std::mutex> lock(mtx); is created, it locks the mutex.
+When std::lock_guard<std::mutex> lg(mtx); is created, it locks the mutex.
 When the function exits (or an exception occurs), the lock_guard automatically unlocks the mutex.
 No need for manual lock() and unlock().
 Use Case
