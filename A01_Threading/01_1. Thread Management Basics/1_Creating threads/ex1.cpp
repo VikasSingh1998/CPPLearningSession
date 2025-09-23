@@ -18,7 +18,7 @@ int main()
 {
     // main thread create the child thread t1 that run the funtion "fun" with an argumnet of 10
     // 'fun' is used as a function pointer here
-    std::thread t1(fun, 10);
+    std::thread t1(fun, 10);//pass the argument by value(Thread gets a copy of x)
     // std::thread t2(fun, 10); // this thread may be create before the thread t1 by the main thread.
 
     // this loop will be executed by the main thread.
@@ -40,3 +40,49 @@ int main()
 */
 // output
 // Here the output order is not guaranted. It may be in any order.
+================================================================================================================
+================================================================================================================
+Thread Parameter Passing in C++
+--------------------------------------------------
+1. By Value (Default)
+void func(int x) { x += 5; }
+int a = 10;
+std::thread t(func, a); // Thread gets copy of 'a'
+Original variable a remain unchanged.
+--------------------------------------------------
+2. By Reference
+void func(int &x) { x += 5; }
+int a = 10;
+std::thread t(func, std::ref(a)); // Pass by reference
+Original variable a modified by thread.
+-----------------------------------------------------
+3. By Const Reference
+void func(const int &x) { std::cout << x; }
+int a = 42;
+std::thread t(func, std::cref(a)); // Pass by const reference
+Thread cannot modify a.
+-----------------------------------------------------
+4. By Pointer
+void func(int *x) { *x += 5; }
+int a = 10;
+std::thread t(func, &a); // Pass pointer
+Thread can modify original variable using pointer.
+------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
