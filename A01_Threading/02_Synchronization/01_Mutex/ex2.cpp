@@ -32,6 +32,43 @@ Ideally, counter = 200000 (100000 from each thread).
 Kabhi 150000, kabhi 170000, kabhi 180000... different every run.
 
 Reason → Race Condition (dono threads ek hi time pe counter ko update kar rahe hain).
+----------------------------------------------------------------------------------------------------
+✅ Fix with Mutex
+
+#include <iostream>
+#include <thread>
+#include <mutex>
+
+int counter = 0;  
+std::mutex m;     // create mutex
+
+void increment() 
+{
+    for(int i = 0; i < 100000; i++) 
+    {
+        m.lock();      // 🔒 lock
+        counter++;
+        m.unlock();    // 🔓 unlock
+    }
+}
+
+int main() 
+{
+    std::thread t1(increment);
+    std::thread t2(increment);
+
+    t1.join();
+    t2.join();
+
+    std::cout << "Final Counter: " << counter << "\n";
+    return 0;
+}
+
+✅ Output with Mutex:
+
+Hamesha 200000
+
+Kyunki ab ek time pe sirf ek thread counter access kar raha hai.
 =====================================================================================================
 race condition is not deadlock --> Race Condition vs Deadlock
 -----------------------------------------------------------------
