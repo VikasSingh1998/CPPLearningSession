@@ -3,6 +3,8 @@ t1.join()
 ===============
 1. Suppose  main thread created the thread t1 and and t1 is doing some operations.
 2. If Main thread executes the lines --> t1.join() , then main thread wait until t1 completes its executions.
+3. Agar aap join() nahi use karte, aur main thread terminate ho jaye, toh background thread abruptly terminate ho sakta hai.
+4. Ek thread ko sirf ek baar join kar sakte ho.
 
 t1.joinable()
 =================
