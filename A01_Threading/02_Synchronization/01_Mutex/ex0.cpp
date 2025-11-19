@@ -82,22 +82,22 @@ The std::mutex class is a wrapper around OS-specific synchronization primitives 
 
 Definition (Simplified)
 ------------------------
-namespace std 
+
+class mutex 
 {
-    class mutex 
-    {
-    public:
-        mutex();           // Constructor
-        ~mutex();          // Destructor
+public:
+    mutex();           // Constructor
+    ~mutex();          // Destructor
 
-        void lock();       // Locks the mutex (blocks if already locked)
-        void unlock();     // Unlocks the mutex
-        bool try_lock();   // Tries to lock the mutex (returns immediately if already locked)
+    void lock();       // Locks the mutex (blocks if already locked)
+    void unlock();     // Unlocks the mutex
+    bool try_lock();   // Tries to lock the mutex (returns immediately if already locked)
 
-        mutex(const mutex&) = delete; // Mutex cannot be copied
-        mutex& operator=(const mutex&) = delete;
-    };
-}
+    mutex(const mutex&) = delete; // Mutex cannot be copied
+    mutex& operator=(const mutex&) = delete; //one mutex obj can't be assigned to other.
+    //Mutex cannot be copied or assigned because it represents a unique OS lock. 
+};
+
 --------------------------------------------------------------------------
 2. How std::mutex Works Internally
 -----------------------------------
