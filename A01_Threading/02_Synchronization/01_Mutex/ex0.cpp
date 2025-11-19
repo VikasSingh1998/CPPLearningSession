@@ -86,8 +86,8 @@ Definition (Simplified)
 class mutex 
 {
 public:
-    mutex();           // Constructor
-    ~mutex();          // Destructor
+    mutex();           // Constructor --> OS lock create
+    ~mutex();          // Destructor --> OS lock destroy
 
     void lock();       // Locks the mutex (blocks if already locked)
     void unlock();     // Unlocks the mutex
@@ -111,8 +111,21 @@ try_lock() ==> attempts to lock but does not block if already locked.
 4. Why std::mutex Cannot Be Copied?
 std::mutex m1;
 std::mutex m2 = m1; // ❌ ERROR! std::mutex is non-copyable
-Mutex cannot be copied because copying it would allow two mutex objects to control the same resource, leading to undefined behavior.
-Instead, you pass mutex by reference if needed.
+
+Mutex is not copyable.
+Agar mutex copy ho jaaye to:
+Do mutex objects same internal OS lock ko point karenge
+Undefined behavior
+Sync break ho jaayega
+
+Isliye C++ standard ne copying delete kar di hai.
+
+Simple rule:
+-------------
+🚫 Mutex copy nahi hota
+🚫 Mutex assign nahi hota
+✔ Mutex sirf move ho sakta hai (kuch implementations allow)
+✔ Har mutex unique hota hai
 ---------------------------------------------------------------------------
 Example: Example to Demonstrate Mutex Blocking
 ================================================
