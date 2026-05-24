@@ -1,1 +1,645 @@
 
+STAGE 1 — CORE MODERN C++ FOUNDATION
+(First 2–3 months)
+
+Yahan speed se nahi, depth se padhna hai.
+
+1. C++ Fundamentals Deep Revision
+Aapko ye sab crystal clear hona chahiye:
+
+Language Basics
+variables
+
+references
+
+pointers
+
+const correctness
+
+storage duration
+
+lvalue/rvalue
+
+scope lifetime
+
+function overloading
+
+namespaces
+
+inline
+
+static
+
+Memory
+stack vs heap
+
+memory layout
+
+alignment
+
+padding
+
+dangling pointer
+
+memory leak
+
+undefined behavior
+
+2. OOP Deep Understanding
+Important:
+AI infra mein pure OOP kam use hota hai,
+but concepts samajhna mandatory hai.
+
+Topics
+class/object
+
+constructors/destructors
+
+copy constructor
+
+move constructor
+
+copy assignment
+
+move assignment
+
+virtual function
+
+vtable/vptr
+
+polymorphism
+
+inheritance
+
+abstract class
+
+multiple inheritance
+
+diamond problem
+
+object slicing
+
+3. RAII (VERY IMPORTANT)
+Ye Modern C++ ka heart hai.
+
+Learn:
+
+deterministic destruction
+
+ownership
+
+resource management
+
+exception safety
+
+scope-based cleanup
+
+4. Smart Pointers
+Deep level:
+
+unique_ptr
+ownership transfer
+
+move-only semantics
+
+shared_ptr
+reference counting
+
+control block
+
+cyclic reference
+
+weak_ptr
+breaking cycles
+
+Topics
+custom deleter
+
+make_shared
+
+make_unique
+
+STAGE 2 — MODERN C++ CORE
+(2–4 months)
+
+5. Move Semantics (CRITICAL)
+Must understand deeply.
+
+Topics
+rvalue references
+
+std::move
+
+move ctor
+
+move assignment
+
+copy elision
+
+NRVO
+
+perfect forwarding
+
+forwarding references
+
+6. Templates (MOST IMPORTANT)
+AI infra world heavily template-based hota hai.
+
+Basics
+function templates
+
+class templates
+
+specialization
+
+partial specialization
+
+Advanced
+variadic templates
+
+fold expressions
+
+type traits
+
+template metaprogramming
+
+SFINAE
+
+CRTP
+
+C++20
+concepts
+
+requires
+
+7. STL Deep Dive
+Not surface level.
+
+Containers
+Sequence
+vector
+
+array
+
+deque
+
+list
+
+forward_list
+
+Associative
+map
+
+set
+
+multimap
+
+multiset
+
+Unordered
+unordered_map
+
+unordered_set
+
+Adaptors
+queue
+
+priority_queue
+
+stack
+
+Must Understand
+internal implementation
+
+complexity
+
+iterator invalidation
+
+cache friendliness
+
+memory overhead
+
+reallocation behavior
+
+8. Algorithms Library
+Learn:
+
+sort
+
+stable_sort
+
+partition
+
+lower_bound
+
+upper_bound
+
+binary_search
+
+transform
+
+accumulate
+
+remove_if
+
+find_if
+
+9. Lambdas
+Deep understanding:
+
+capture by value/reference
+
+mutable lambda
+
+generic lambda
+
+lambda lifetime
+
+10. constexpr / consteval
+Important modern feature.
+
+Learn:
+
+compile-time computation
+
+constexpr functions
+
+constexpr objects
+
+STAGE 3 — CONCURRENCY (VERY IMPORTANT)
+(3 months)
+
+Ye AI infra ka core hai.
+
+11. Threads
+Learn:
+
+std::thread
+
+join
+
+detach
+
+thread lifecycle
+
+12. Synchronization
+Must Master
+mutex
+
+recursive_mutex
+
+timed_mutex
+
+lock_guard
+
+unique_lock
+
+scoped_lock
+
+13. Condition Variables
+Understand:
+
+producer-consumer
+
+wait/notify
+
+spurious wakeup
+
+14. Atomics (VERY IMPORTANT)
+Deeply learn:
+
+std::atomic
+
+atomic operations
+
+lock-free programming
+
+15. Memory Ordering (CRITICAL)
+Very important for elite systems engineers.
+
+Learn:
+
+memory model
+
+acquire/release
+
+seq_cst
+
+relaxed ordering
+
+fences
+
+16. Async Programming
+Learn:
+
+future
+
+promise
+
+async
+
+packaged_task
+
+17. Thread Pools
+Build yourself:
+
+worker threads
+
+job queue
+
+work stealing basics
+
+STAGE 4 — ADVANCED MODERN C++
+(2 months)
+
+18. Type Erasure
+Examples:
+
+std::function
+
+std::any
+
+19. Allocators
+Important for performance systems.
+
+Learn:
+
+custom allocators
+
+allocator-aware containers
+
+memory pools
+
+20. Expression Templates
+High-performance libraries use this.
+
+21. TMP (Template Meta Programming)
+Learn:
+
+compile-time programming
+
+recursive templates
+
+integral_constant
+
+22. Coroutines (C++20)
+VERY important future skill.
+
+Learn:
+
+co_await
+
+co_yield
+
+co_return
+
+23. Modules (C++20)
+High-level understanding enough initially.
+
+STAGE 5 — SYSTEMS + PERFORMANCE
+(Parallel with Modern C++)
+
+24. Linux Internals
+Learn:
+
+process
+
+thread
+
+scheduler
+
+virtual memory
+
+mmap
+
+page faults
+
+NUMA
+
+context switch
+
+25. Networking
+Learn:
+
+sockets
+
+TCP/IP
+
+epoll
+
+io_uring
+
+async IO
+
+26. Performance Engineering
+CRITICAL.
+
+Learn:
+
+CPU cache
+
+cache locality
+
+branch prediction
+
+SIMD
+
+vectorization
+
+false sharing
+
+27. Profiling Tools
+Must know:
+
+perf
+
+gdb
+
+valgrind
+
+sanitizers
+
+flamegraphs
+
+STAGE 6 — DSA FOR INTERVIEWS
+(Parallel)
+
+Must Master
+Arrays
+prefix sum
+
+sliding window
+
+two pointers
+
+Hashing
+hashmap tricks
+
+Trees
+BST
+
+segment tree
+
+trie
+
+Graphs
+BFS
+
+DFS
+
+shortest path
+
+topological sort
+
+Heaps
+priority queue
+
+Recursion
+backtracking
+
+IMPORTANT
+Interview ke liye:
+
+250–350 quality Leetcode enough
+
+medium heavy
+
+selected hard
+
+STAGE 7 — DESIGN + ARCHITECTURE
+(VERY IMPORTANT)
+
+Learn
+SOLID
+
+design patterns
+
+producer-consumer
+
+reactor pattern
+
+proactor pattern
+
+pub-sub
+
+STAGE 8 — BUILD PROJECTS
+(MOST IMPORTANT)
+
+Project 1
+Thread pool
+
+Project 2
+Lock-free queue
+
+Project 3
+Custom allocator
+
+Project 4
+Mini async runtime
+
+Project 5
+HTTP server
+
+Project 6
+Redis clone
+
+Project 7
+Tiny coroutine scheduler
+
+Project 8
+Mini vector implementation
+
+STAGE 9 — AI INFRA ENTRY
+(After strong C++)
+
+Learn Lightly
+Python basics
+
+NumPy
+
+PyTorch basics
+
+tensor basics
+
+transformer high-level
+
+inference pipeline
+
+STAGE 10 — GPU/CUDA
+(GOLD LEVEL)
+
+Learn
+CUDA kernels
+
+GPU memory hierarchy
+
+warp
+
+tensor operations
+
+reduction
+
+matrix multiplication
+
+BEST BOOKS
+C++
+Effective Modern C++
+
+C++ Concurrency in Action
+
+The C++ Programming Language
+
+Systems
+Computer Systems: A Programmer's Perspective
+
+Performance
+Brendan Gregg materials
+
+BEST CODEBASES TO READ
+PyTorch
+
+TensorFlow
+
+llama.cpp
+
+ONNX Runtime
+
+Redis
+
+MOST IMPORTANT PRIORITY ORDER
+Aapke liye exact order:
+
+Modern C++ Core
+
+Concurrency
+
+STL Deep Dive
+
+Linux + Systems
+
+Performance Engineering
+
+DSA
+
+Advanced C++
+
+Networking
+
+AI Infra Basics
+
+CUDA
+
+FINAL TARGET SKILLSET
+Aapko eventually banna hai:
+
+elite C++ engineer
+
+low-latency systems engineer
+
+high-performance infra engineer
+
+AI runtime/inference engineer
+
+Aur Qualcomm background is path ke liye genuinely strong foundation hai.
+
+
